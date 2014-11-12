@@ -4,10 +4,12 @@
 #   Ensure the SQLite 3 gem is defined in your Gemfile
 #   gem 'sqlite3'
 development:
-  adapter: sqlite3
-  database: db/development.sqlite3
-  pool: 5
-  timeout: 5000
+  adapter: postgresql
+  host: ec2-54-204-39-187.compute-1.amazonaws.com
+  username: hyhqwsfabnyctw
+  database: df408fa2cqa0a9
+  password: NZizR2-rSuT461tiBOd96PvAMT
+  port: 5432
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
