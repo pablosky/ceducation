@@ -1,6 +1,0 @@
-curl -H 'Content-Type: application/json' \
-  -H 'Accept: application/json' \
-  -X POST http://localhost:3000/users/sign_in \
-  -d "{'user' : { 'email' : 'pablo.sky@hotmail.com', 'password' : 'silpp77aa'}}" \
-  -c cookie
-
