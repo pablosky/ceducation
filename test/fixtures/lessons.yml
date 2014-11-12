@@ -1,0 +1,25 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  answer: MyString
+  category: MyString
+  content: MyText
+  distract1: MyString
+  distract2: MyString
+  distract3: MyString
+  photo: MyString
+  question: MyString
+  tags: MyString
+  word_id: 
+
+two:
+  answer: MyString
+  category: MyString
+  content: MyText
+  distract1: MyString
+  distract2: MyString
+  distract3: MyString
+  photo: MyString
+  question: MyString
+  tags: MyString
+  word_id: 

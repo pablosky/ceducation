@@ -1,0 +1,45 @@
+<%- model_class = Lesson -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human.titleize %></h1>
+</div>
+
+<dl class="dl-horizontal">
+  <dt><strong><%= model_class.human_attribute_name(:answer) %>:</strong></dt>
+  <dd><%= @lesson.answer %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:category) %>:</strong></dt>
+  <dd><%= @lesson.category %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:content) %>:</strong></dt>
+  <dd><%= @lesson.content %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:distract1) %>:</strong></dt>
+  <dd><%= @lesson.distract1 %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:distract2) %>:</strong></dt>
+  <dd><%= @lesson.distract2 %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:distract3) %>:</strong></dt>
+  <dd><%= @lesson.distract3 %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:photo) %>:</strong></dt>
+  <dd><%= @lesson.photo %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:question) %>:</strong></dt>
+  <dd><%= @lesson.question %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:tags) %>:</strong></dt>
+  <dd><%= @lesson.tags %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:word_id) %>:</strong></dt>
+  <dd><%= @lesson.word_id %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:sound) %>:</strong></dt>
+  <dd><%= @lesson.sound %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:posneg) %>:</strong></dt>
+  <dd><%= @lesson.posneg %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:skillLevel) %>:</strong></dt>
+  <dd><%= @lesson.skillLevel %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:user_id) %>:</strong></dt>
+  <dd><%= @lesson.user_id %></dd>
+</dl>
+
+<%= link_to t('.back', :default => t("helpers.links.back")),
+              lessons_path, :class => 'btn btn-default'  %>
+<%= link_to t('.edit', :default => t("helpers.links.edit")),
+              edit_lesson_path(@lesson), :class => 'btn btn-default' %>
+<%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+              lesson_path(@lesson),
+              :method => 'delete',
+              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+              :class => 'btn btn-danger' %>

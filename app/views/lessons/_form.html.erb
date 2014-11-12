@@ -1,0 +1,125 @@
+<%= form_for @lesson, :html => { :class => "form-horizontal lesson" } do |f| %>
+
+  <% if @lesson.errors.any? %>
+    <div id="error_expl" class="panel panel-danger">
+      <div class="panel-heading">
+        <h3 class="panel-title"><%= pluralize(@lesson.errors.count, "error") %> prohibited this lesson from being saved:</h3>
+      </div>
+      <div class="panel-body">
+        <ul>
+        <% @lesson.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+        </ul>
+      </div>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= f.label :answer, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :answer, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:answer) %>
+  </div>
+  <div class="form-group">
+    <%= f.label :category, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :category, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:category) %>
+  </div>
+  <div class="form-group">
+    <%= f.label :content, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :content, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:content) %>
+  </div>
+  <div class="form-group">
+    <%= f.label :distract1, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :distract1, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:distract1) %>
+  </div>
+  <div class="form-group">
+    <%= f.label :distract2, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :distract2, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:distract2) %>
+  </div>
+  <div class="form-group">
+    <%= f.label :distract3, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :distract3, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:distract3) %>
+  </div>
+  <div class="form-group">
+    <%= f.label :photo, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :photo, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:photo) %>
+  </div>
+  <div class="form-group">
+    <%= f.label :question, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :question, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:question) %>
+  </div>
+  <div class="form-group">
+    <%= f.label :tags, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :tags, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:tags) %>
+  </div>
+  <div class="form-group">
+    <%= f.label :word_id, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :word_id, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:word_id) %>
+  </div>
+  <div class="form-group">
+    <%= f.label :sound, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.file_field :sound, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:sound) %>
+  </div>
+  <div class="form-group">
+    <%= f.label :posneg, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :posneg, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:posneg) %>
+  </div>
+  <div class="form-group">
+    <%= f.label :skillLevel, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :skillLevel, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:skillLevel) %>
+  </div>
+  <div class="form-group">
+    <%= f.label :user_id, :class => 'control-label col-lg-2' %>
+    <div class="col-lg-10">
+      <%= f.text_field :user_id, :class => 'form-control' %>
+    </div>
+    <%=f.error_span(:user_id) %>
+  </div>
+
+  <div class="form-group">
+    <div class="col-lg-offset-2 col-lg-10">
+      <%= f.submit nil, :class => 'btn btn-primary' %>
+      <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                lessons_path, :class => 'btn btn-default' %>
+    </div>
+  </div>
+
+<% end %>

@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user_id: 
+  skillLevel: 1
+  level1Points: 1
+
+two:
+  user_id: 
+  skillLevel: 1
+  level1Points: 1

@@ -1,0 +1,27 @@
+<div class="container">
+<br>
+<center><h1>Negative Or Positive? </h1>
+
+
+
+<br>
+<% if @lesson!= nil && @words!= nil %>
+
+	<%= render 'lessons/lesson' %>
+
+<% end %> 
+
+<br><br>
+
+
+
+<%= link_to 'Positive' , game_negapos_path(id: @lesson.id , ans: 'positive' , skill: @skill ), :class => 'btn btn-success'  %>
+
+
+<%= link_to 'Negative' , game_negapos_path(id: @lesson.id, ans: 'negative', skill: @skill), :class => 'btn btn-danger'  %>
+
+
+</center>
+
+
+</div>

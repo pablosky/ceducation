@@ -1,0 +1,194 @@
+
+
+<div class="container">
+
+<div class="row">
+
+<div class = "col-md-7">
+	<table class="table table-striped">
+		<thead>
+    <tr>
+      <th>Student</th>
+      <th>Progress</th>
+      <th>Course</th>
+      <th>Score</th>
+      <th>Options</th>
+    </tr>
+  </thead>
+  <tbody>
+   
+      <tr>
+        <td>Paul Gates</td>
+        <td>50%</td>
+        <td><select><option>2B</option></select></td>
+        <td>135</td>
+        <td>
+          <%= link_to 'message', "www.google.cl", :class => 'btn btn-default btn-xs' %>
+          <%= link_to 'stats', "www.google.cl", :class => 'btn btn-success btn-xs' %>
+      </tr>
+
+      <tr>
+        <td>Joana Ottone</td>
+        <td>60%</td>
+        <td><select><option>2B</option></select></td>
+        <td>190</td>
+        <td>
+          <%= link_to 'message', "www.google.cl", :class => 'btn btn-default btn-xs' %>
+          <%= link_to 'stats', "www.google.cl", :class => 'btn btn-success btn-xs' %>
+      </tr>
+
+      <tr>
+        <td>Bill Graham</td>
+        <td>55%</td>
+        <td><select><option>3A</option></select></td>
+        <td>180</td>
+        <td>
+          <%= link_to 'message', "www.google.cl", :class => 'btn btn-default btn-xs' %>
+          <%= link_to 'stats', "www.google.cl", :class => 'btn btn-success btn-xs' %>
+      </tr>
+
+      <tr>
+        <td>Fernanda Viera</td>
+        <td>75%</td>
+        <td><select><option>3A</option></select></td>
+        <td>200</td>
+        <td>
+          <%= link_to 'message', "www.google.cl", :class => 'btn btn-default btn-xs' %>
+          <%= link_to 'stats', "www.google.cl", :class => 'btn btn-success btn-xs' %>
+      </tr>
+
+      <tr>
+        <td>Lamar	Welch</td>
+        <td>75%</td>
+        <td><select><option>3A</option></select></td>
+        <td>200</td>
+        <td>
+          <%= link_to 'message', "www.google.cl", :class => 'btn btn-default btn-xs' %>
+          <%= link_to 'stats', "www.google.cl", :class => 'btn btn-success btn-xs' %>
+      </tr>
+
+
+      <tr>
+        <td>Randolph	Poole</td>
+        <td>85%</td>
+        <td><select><option>3A</option></select></td>
+        <td>220</td>
+        <td>
+          <%= link_to 'message', "www.google.cl", :class => 'btn btn-default btn-xs' %>
+          <%= link_to 'stats', "www.google.cl", :class => 'btn btn-success btn-xs' %>
+      </tr>
+    
+    	<tr>
+        <td>Jean Quinn</td>
+        <td>85%</td>
+        <td><select><option>3A</option></select></td>
+        <td>220</td>
+        <td>
+          <%= link_to 'message', "www.google.cl", :class => 'btn btn-default btn-xs' %>
+          <%= link_to 'stats', "www.google.cl", :class => 'btn btn-success btn-xs' %>
+      </tr>
+  </tbody>
+	</table>	
+
+
+</div> <!--end of table row -->
+<div class="col-md-5">
+	<div id="pie" style="width:100%; "></div>
+
+</div>
+</div> <!-- end of row -->
+<div id="poof" style="width:100%; height:400px;"></div>
+
+
+
+</div>
+
+
+
+
+<script >
+
+$(function () { 
+    $('#poof').highcharts({
+        chart: {
+            type: 'bar'
+        },
+        title: {
+            text: ' 3A Scores '
+        },
+        xAxis: {
+            categories: ['Vocabulary', 'Sustantives', 'Grammar']
+        },
+        yAxis: {
+            title: {
+                text: 'Scores'
+            }
+        },
+        series: [{
+            name: 'Fernanda Viera',
+            data: [100, 45, 99]
+        }, {
+            name: 'Lamar Welch',
+            data: [120, 70, 83]
+        },{
+            name: 'Jean Quinn',
+            data: [85, 87, 53]
+        }]
+    });
+});</script>
+
+<script type="text/javascript"> 
+
+
+$(function () {
+
+    // Make monochrome colors and set them as default for all pies
+    
+
+    // Build the chart
+    $('#pie').highcharts({
+        chart: {
+            plotBackgroundColor: null,
+            plotBorderWidth: null,
+            plotShadow: false
+        },
+        title: {
+            text: 'Paul Gates Topics usage'
+        },
+        tooltip: {
+            pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+        },
+        plotOptions: {
+            pie: {
+                allowPointSelect: true,
+                cursor: 'pointer',
+                dataLabels: {
+                    enabled: true,
+                    format: '<b>{point.name}</b>: {point.percentage:.1f} %',
+                    style: {
+                        color: (Highcharts.theme && Highcharts.theme.contrastTextColor) || 'black'
+                    }
+                }
+            }
+        },
+        series: [{
+            type: 'pie',
+            name: 'Browser share',
+            data: [
+                ['League of Legends',   45.0],
+                ['Sports',       26.8],
+                {
+                    name: 'History',
+                    y: 12.8,
+                    sliced: true,
+                    selected: true
+                },
+                ['Technology',    8.5],
+                ['Comics',     6.9],
+               
+            ]
+        }]
+    });
+});
+
+</script>
