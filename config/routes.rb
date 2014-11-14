@@ -1,4 +1,8 @@
 RapidVocabulary::Application.routes.draw do
+  resources :classrooms
+
+  resources :schools
+
   resources :tweets
 
   resources :reports

@@ -11,7 +11,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141111133348) do
+ActiveRecord::Schema.define(version: 20141114150844) do
+
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
+  create_table "classrooms", force: true do |t|
+    t.string   "class_name"
+    t.integer  "school_id"
+    t.integer  "teacher_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "classrooms", ["school_id"], name: "index_classrooms_on_school_id", using: :btree
 
   create_table "game_tracks", force: true do |t|
     t.integer  "user_id"
@@ -25,7 +38,7 @@ ActiveRecord::Schema.define(version: 20141111133348) do
     t.string   "gameName"
   end
 
-  add_index "game_tracks", ["user_id"], name: "index_game_tracks_on_user_id"
+  add_index "game_tracks", ["user_id"], name: "index_game_tracks_on_user_id", using: :btree
 
   create_table "lessons", force: true do |t|
     t.string   "answer"
@@ -46,8 +59,8 @@ ActiveRecord::Schema.define(version: 20141111133348) do
     t.integer  "user_id"
   end
 
-  add_index "lessons", ["user_id"], name: "index_lessons_on_user_id"
-  add_index "lessons", ["word_id"], name: "index_lessons_on_word_id"
+  add_index "lessons", ["user_id"], name: "index_lessons_on_user_id", using: :btree
+  add_index "lessons", ["word_id"], name: "index_lessons_on_word_id", using: :btree
 
   create_table "reports", force: true do |t|
     t.string   "reason"
@@ -56,7 +69,15 @@ ActiveRecord::Schema.define(version: 20141111133348) do
     t.datetime "updated_at"
   end
 
-  add_index "reports", ["lesson_id"], name: "index_reports_on_lesson_id"
+  add_index "reports", ["lesson_id"], name: "index_reports_on_lesson_id", using: :btree
+
+  create_table "schools", force: true do |t|
+    t.string   "name"
+    t.string   "logo"
+    t.text     "description"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "tweets", force: true do |t|
     t.string   "name"
@@ -82,9 +103,9 @@ ActiveRecord::Schema.define(version: 20141111133348) do
     t.string   "authentication_token"
   end
 
-  add_index "users", ["authentication_token"], name: "index_users_on_authentication_token"
-  add_index "users", ["email"], name: "index_users_on_email", unique: true
-  add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+  add_index "users", ["authentication_token"], name: "index_users_on_authentication_token", using: :btree
+  add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
+  add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
   create_table "words", force: true do |t|
     t.text     "definition"
