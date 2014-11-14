@@ -50,26 +50,21 @@
 
       <BR><BR>
 
-<button onclick="myFunction()"> ENVIAR!!</button>
+<button onclick="click()"> ENVIAR!!</button>
 
 
         
   <script src="/intl/en/chrome/assets/common/js/chrome.min.js">
 </script> 
 
-<script type="text/javascript">
+<script>
 
 
 	
-   
-	function myFunction() {   
-
-	var text = document.getElementById("final_span");
-  	$.ajax({
-    	url: "/save_text?text=saddsa"+text,
-    	type: 'POST'
-  });
-
+   $(".final").live("click", function () {
+    var monthname =  $(this).text();
+    alert(monthname);
+});
 
 </script>
       <BR><BR>	
