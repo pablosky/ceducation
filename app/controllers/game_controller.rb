@@ -5,8 +5,14 @@ class GameController < ApplicationController
 
  	@word = Word.find_by_word(params[:word])
 
+ 	if @word ==[] 
+
  	@content = Lesson.where(:word_id => @word.id)
 
+ 	else
+ 		flash[:notice] = "Word not found"
+ 		redirect_to "/"
+ 	end
  end
 
 
