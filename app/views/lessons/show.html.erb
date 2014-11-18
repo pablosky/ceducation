@@ -1,38 +1,27 @@
-<%- model_class = Lesson -%>
-<div class="page-header">
-  <h1><%=t '.title', :default => model_class.model_name.human.titleize %></h1>
+<div class="container">
+
+<div class="image">
+    <h1><%= @lesson.word.word %></h1>
+    <br>
+    <img src="<%= @lesson.photo %>" style="width:50%;height:360px;">
+    <br>
+    <h2><span id="popover" data-trigger="hover" data-content="<%= @lesson.word.definition %>"><%= @words[0..7].join(' ') %>  <br><% if @words.count >  8 %><%= @words[8..100].join(' ') %> <% end %><span></h2>
+ </div>
+ <audio controls>
+  
+  <source src="<%= @lesson.sound %>" type="audio/mpeg">
+  Your browser does not support the audio tag.
+</audio>
 </div>
 
-<dl class="dl-horizontal">
-  <dt><strong><%= model_class.human_attribute_name(:answer) %>:</strong></dt>
-  <dd><%= @lesson.answer %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:category) %>:</strong></dt>
-  <dd><%= @lesson.category %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:content) %>:</strong></dt>
-  <dd><%= @lesson.content %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:distract1) %>:</strong></dt>
-  <dd><%= @lesson.distract1 %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:distract2) %>:</strong></dt>
-  <dd><%= @lesson.distract2 %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:distract3) %>:</strong></dt>
-  <dd><%= @lesson.distract3 %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:photo) %>:</strong></dt>
-  <dd><%= @lesson.photo %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:question) %>:</strong></dt>
-  <dd><%= @lesson.question %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:tags) %>:</strong></dt>
-  <dd><%= @lesson.tags %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:word_id) %>:</strong></dt>
-  <dd><%= @lesson.word_id %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:sound) %>:</strong></dt>
-  <dd><%= @lesson.sound %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:posneg) %>:</strong></dt>
-  <dd><%= @lesson.posneg %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:skillLevel) %>:</strong></dt>
-  <dd><%= @lesson.skillLevel %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:user_id) %>:</strong></dt>
-  <dd><%= @lesson.user_id %></dd>
-</dl>
+
+
+
+<script>
+
+  $("#popover").popover({ trigger: "hover" });
+
+</script>
 
 <%= link_to t('.back', :default => t("helpers.links.back")),
               lessons_path, :class => 'btn btn-default'  %>
