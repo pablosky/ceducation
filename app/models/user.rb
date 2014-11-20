@@ -8,4 +8,6 @@ class User < ActiveRecord::Base
 
 
          has_many :lessons
+
+         serialize :classrooms
 end

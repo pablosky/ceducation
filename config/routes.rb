@@ -22,6 +22,14 @@ RapidVocabulary::Application.routes.draw do
   # You can have the root of your site routed with "root"
    root 'welcome#index'
 
+   get 'student_dashboard' => 'student_dashboard#index'
+
+   get 'join_class/:id' => 'student_dashboard#join_class'
+
+   get 'pron' => 'game#check_pron'
+
+   get 'pron/:texto' => 'game#check_pron'
+
    get 'tt' => 'welcome#get_tweets'
 
    post 'save_text' => 'welcome#save_text'

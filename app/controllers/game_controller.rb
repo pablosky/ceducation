@@ -15,6 +15,21 @@ class GameController < ApplicationController
  	end
  end
 
+#check pronunciation
+ def check_pron
+
+ 	@lesson = Lesson.where(:category => "Pronunciation").sample
+
+ 	if params[:texto] 
+
+
+ 		flash[:notice] = "correct! is "+ params[:texto]
+ 		redirect_to "/"
+
+ 	end	
+
+ end 
+ 
 
  def dashboard
  	
