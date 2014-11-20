@@ -1,0 +1,54 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>User:</strong>
+  <%= @planification.user %>
+</p>
+
+<p>
+  <strong>Program:</strong>
+  <%= @planification.program %>
+</p>
+
+<p>
+  <strong>Subject:</strong>
+  <%= @planification.subject %>
+</p>
+
+<p>
+  <strong>Teach time:</strong>
+  <%= @planification.teach_time %>
+</p>
+
+<p>
+  <strong>Classroom:</strong>
+  <%= @planification.classroom %>
+</p>
+
+<p>
+  <strong>Obj fund vert:</strong>
+  <%= @planification.obj_fund_vert %>
+</p>
+
+<p>
+  <strong>Obj fund transv:</strong>
+  <%= @planification.obj_fund_transv %>
+</p>
+
+<p>
+  <strong>Contents:</strong>
+  <%= @planification.contents %>
+</p>
+
+<p>
+  <strong>Expect learn:</strong>
+  <%= @planification.expect_learn %>
+</p>
+
+<p>
+  <strong>Activ:</strong>
+  <%= @planification.activ %>
+</p>
+
+<%= link_to 'Edit', edit_planification_path(@planification) %> |
+<%= link_to 'Back', planifications_path %>

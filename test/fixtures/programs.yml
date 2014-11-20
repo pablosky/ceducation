@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  subject: MyString
+  obj_fund_vert: MyText
+  obj_fund_transv: MyText
+  contents: MyText
+  activities: MyText
+
+two:
+  name: MyString
+  subject: MyString
+  obj_fund_vert: MyText
+  obj_fund_transv: MyText
+  contents: MyText
+  activities: MyText

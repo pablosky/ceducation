@@ -1,4 +1,8 @@
 RapidVocabulary::Application.routes.draw do
+  resources :planifications
+
+  resources :programs
+
   resources :classrooms
 
   resources :schools
@@ -21,11 +25,20 @@ RapidVocabulary::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
    root 'welcome#index'
-
+   #student routes
    get 'student_dashboard' => 'student_dashboard#index'
+
+   get 'class_search' => 'student_dashboard#class_search'
 
    get 'join_class/:id' => 'student_dashboard#join_class'
 
+   #teacher routes
+
+   get 'teacher_dashboard' => 'teacher_dashboard#index'
+
+
+
+   #game routes
    get 'pron' => 'game#check_pron'
 
    get 'pron/:texto' => 'game#check_pron'

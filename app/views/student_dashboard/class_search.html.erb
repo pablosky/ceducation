@@ -1,0 +1,23 @@
+
+<% if @class_search != nil && @class_search !=[] %>
+
+<h1> Search results </h1>
+
+
+<table class="table table-striped">
+	<thead>
+	<th>School</th>
+	<th>Class</th>
+	<th>Option</th>
+	</thead>
+	<% @class_search.each do |classe| %>
+	<tbody>
+	<td><%= School.find(classe.school_id).name %></td>
+	<td>	 <%= classe.class_name %>  </td>
+	<td> <%= link_to 'Join Class' , '/join_class/'+classe.id.to_s, :class => 'btn btn-success'  %> </td>
+	</tbody>
+	<% end %>
+</table>
+
+
+<% end %>

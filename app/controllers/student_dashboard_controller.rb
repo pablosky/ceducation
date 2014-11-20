@@ -8,6 +8,20 @@ class StudentDashboardController < ApplicationController
 
 	end
 
+	def class_search
+
+		
+	 	@class_search = Classroom.where(:class_name => params[:class])
+
+	 	if @class_search ==[] || @class_search == nil
+
+	 
+	 		flash[:notice] = "class not found"
+	 		redirect_to student_dashboard_path
+	 	end
+		
+	end
+
 	def join_class
 
 
@@ -20,11 +34,21 @@ class StudentDashboardController < ApplicationController
 		 		@user.classrooms = []
 		 		@user.classrooms << params[:id]
 		 		@user.save
+		 		redirect_to student_dashboard_path
 
 		else	
 			
-			@user.classrooms << params[:id]
-			@user.save
+
+			if @user.classrooms.include?(params[:id]) 
+				flash[:notice] = "already part of class"
+				redirect_to student_dashboard_path
+			else
+				@user.classrooms << params[:id]
+				@user.save
+				flash[:notice] = "succesfuly joined"
+				redirect_to student_dashboard_path
+	 			
+			end
 
 		end 		
 

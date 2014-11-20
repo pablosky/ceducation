@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @program.name %>
+</p>
+
+<p>
+  <strong>Subject:</strong>
+  <%= @program.subject %>
+</p>
+
+<p>
+  <strong>Obj fund vert:</strong>
+  <%= @program.obj_fund_vert %>
+</p>
+
+<p>
+  <strong>Obj fund transv:</strong>
+  <%= @program.obj_fund_transv %>
+</p>
+
+<p>
+  <strong>Contents:</strong>
+  <%= @program.contents %>
+</p>
+
+<p>
+  <strong>Activities:</strong>
+  <%= @program.activities %>
+</p>
+
+<%= link_to 'Edit', edit_program_path(@program) %> |
+<%= link_to 'Back', programs_path %>

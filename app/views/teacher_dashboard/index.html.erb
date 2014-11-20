@@ -1,8 +1,7 @@
 
 
-
 <div class="container">
-	<h1> Student Dashboard </h1><br>
+	<h1> Teacher Dashboard </h1><br>
 <div class="row">
 	<div class="col-md-3 rightbord " >
 
@@ -12,10 +11,18 @@
   		<%= submit_tag "Search", :name => nil %>
 	<% end %>
    </p>	
-
-
-
    <br>
+   <h5>My Classes</h5>
+
+	   <% @my_classrooms.each do |classroom| %>
+
+	   		<h3><%= link_to classroom.class_name , classroom_path(classroom) %></h3> <br>
+
+	   <% end %>
+
+   <%= link_to 'Create new classroom' , new_classroom_path, :class => 'btn btn-danger'  %><br>
+
+   
 
 	
 	</div>
