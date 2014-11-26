@@ -1,0 +1,12 @@
+<h4> create new quiz </h4>
+
+<%= form_for @quiz, :html => { :class => "form-horizontal word" } do |f| %>
+
+<div class="form-group">
+    <div class="col-lg-offset-2 col-lg-10">
+      <%= f.submit nil, :class => 'btn btn-primary' %>
+     
+    </div>
+  </div>
+
+<% end %>

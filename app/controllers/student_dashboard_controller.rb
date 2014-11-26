@@ -3,7 +3,7 @@ class StudentDashboardController < ApplicationController
 
 	def index
 
-		#@courses = Classroom.where(classroom_id:=>'bla') 
+		@courses = Classroom.where(:id => current_user.classrooms) 
 
 
 	end

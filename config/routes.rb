@@ -13,7 +13,7 @@ RapidVocabulary::Application.routes.draw do
   resources :game_tracks
 
   resources :lessons
-
+  resources :quizzes
   resources :words
 
   devise_for :users
@@ -35,6 +35,7 @@ RapidVocabulary::Application.routes.draw do
    #teacher routes
 
    get 'teacher_dashboard' => 'teacher_dashboard#index'
+
 
 
 

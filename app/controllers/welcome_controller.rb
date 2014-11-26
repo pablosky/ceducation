@@ -1,6 +1,8 @@
 class WelcomeController < ApplicationController
 
 def index
+
+	redirect_to "http://ceducation-landing.herokuapp.com"
 end
 
 def get_tweets

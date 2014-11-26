@@ -18,17 +18,25 @@ class ClassroomsController < ApplicationController
   end
 
   def edit
+
   end
 
   def create
     @classroom = Classroom.new(classroom_params)
+    @classroom.teacher_id = current_user.id
     @classroom.save
     respond_with(@classroom)
   end
 
   def update
+
+    if current_user.id == @classroom.teacher_id
     @classroom.update(classroom_params)
     respond_with(@classroom)
+    else
+
+      redirect_to teacher_dashboard_path
+    end
   end
 
   def destroy

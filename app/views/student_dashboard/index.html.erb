@@ -8,12 +8,18 @@
 
 	<p>
     <%= form_tag(class_search_path, :method => "get", id: "search-form") do %>
-  		<%= text_field_tag :class, params[:class], placeholder: "Search Class" %>
+  		<%= text_field_tag :class, params[:class], placeholder: "Search Class", :class=>"input-sm"%>
   		<%= submit_tag "Search", :name => nil %>
 	<% end %>
    </p>	
+   <br>
+   <h5>My Classes</h5>
 
+	   <% @courses.each do |classroom| %>
 
+	   		<h5><%= link_to classroom.class_name , classroom_path(classroom) %></h5> <br>
+
+	   <% end %>
 
    <br>
 
@@ -22,7 +28,15 @@
 
 	<div class="col-md-9">
 
-		blah!
+	
+  
+
+
+
+
 	</div>			
 </div>
 </div>	
+<script src="mediaelement-and-player.min.js"></script>
+<script src="//vjs.zencdn.net/4.7/video.js"></script>
+<script src="vjs.youtube.js"></script>

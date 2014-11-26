@@ -7,5 +7,12 @@ def index
 
 end
 
+def my_lessons
+
+	@my_lessons = Lesson.where( :user_id => current_user.id )
+
+end
+
+
 
 end

@@ -64,8 +64,17 @@
         $("#send_to_rails").click(function(){
 
           var hola = document.getElementById("final_span").innerHTML;
-          //alert(hola);
-          $.get("/pron/hola");
+          var chao = "<%= @lesson.content %>";
+          if(hola == chao) {
+              alert("bien!");
+            }
+          else {
+
+              alert("mal!");
+
+          }  
+
+          
         })
     })
 

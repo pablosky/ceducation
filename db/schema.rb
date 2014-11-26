@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141120202513) do
+ActiveRecord::Schema.define(version: 20141125204923) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -22,6 +22,7 @@ ActiveRecord::Schema.define(version: 20141120202513) do
     t.integer  "teacher_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.text     "students"
   end
 
   add_index "classrooms", ["school_id"], name: "index_classrooms_on_school_id", using: :btree
@@ -58,6 +59,7 @@ ActiveRecord::Schema.define(version: 20141120202513) do
     t.string   "skillLevel"
     t.integer  "user_id"
     t.string   "translation"
+    t.string   "content_type"
   end
 
   add_index "lessons", ["user_id"], name: "index_lessons_on_user_id", using: :btree
@@ -93,6 +95,20 @@ ActiveRecord::Schema.define(version: 20141120202513) do
     t.datetime "updated_at"
     t.text     "exp_learn"
   end
+
+  create_table "quizzes", force: true do |t|
+    t.string   "subject"
+    t.integer  "classroom_id"
+    t.integer  "user_id"
+    t.text     "lessons"
+    t.string   "topics"
+    t.string   "skill"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "quizzes", ["classroom_id"], name: "index_quizzes_on_classroom_id", using: :btree
+  add_index "quizzes", ["user_id"], name: "index_quizzes_on_user_id", using: :btree
 
   create_table "reports", force: true do |t|
     t.string   "reason"

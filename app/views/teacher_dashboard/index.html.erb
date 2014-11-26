@@ -16,11 +16,12 @@
 
 	   <% @my_classrooms.each do |classroom| %>
 
-	   		<h3><%= link_to classroom.class_name , classroom_path(classroom) %></h3> <br>
+	   		<h3><%= link_to classroom.class_name , classroom_path(classroom) %> <%= link_to 'New Planification', new_planification_path , :class => 'btn btn-warning btn-sm' %> <%= link_to 'Create Quiz', new_quiz_path , :class => 'btn btn-info btn-sm' %>
+</h3> <br>
 
 	   <% end %>
 
-   <%= link_to 'Create new classroom' , new_classroom_path, :class => 'btn btn-danger'  %><br>
+   <%= link_to 'Create new classroom' , new_classroom_path, :class => 'btn btn-success'  %><br>
 
    
 
