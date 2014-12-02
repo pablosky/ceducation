@@ -36,8 +36,9 @@ RapidVocabulary::Application.routes.draw do
 
    get 'teacher_dashboard' => 'teacher_dashboard#index'
 
+   get 'teacher_dashboard/:vercurso' => 'teacher_dashboard#index' 
 
-
+   get 'teacher_dashboard/:nuevaplanificacion' => 'teacher_dashboard#index' 
 
    #game routes
    get 'pron' => 'game#check_pron'

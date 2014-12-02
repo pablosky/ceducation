@@ -64,14 +64,16 @@
         $("#send_to_rails").click(function(){
 
           var hola = document.getElementById("final_span").innerHTML;
-          var chao = "<%= @lesson.content %>";
-          if(hola == chao) {
+          var chao = '<%= @lesson.content.capitalize %>';
+          chao = chao.replace(/\?/g,'')
+          if(hola === chao) {
               alert("bien!");
+               alert(chao); 
             }
           else {
 
               alert("mal!");
-
+              alert(chao); 
           }  
 
           

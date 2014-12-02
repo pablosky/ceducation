@@ -3,7 +3,7 @@
 <div class="container">
 	<h1> Teacher Dashboard </h1><br>
 <div class="row">
-	<div class="col-md-3 rightbord " >
+	<div class="col-lg-4 rightbord " >
 
 	<p>
     <%= form_tag(class_search_path, :method => "get", id: "search-form") do %>
@@ -13,24 +13,28 @@
    </p>	
    <br>
    <h5>My Classes</h5>
-
+  <table class="table table-striped">
+	   <tbody>
 	   <% @my_classrooms.each do |classroom| %>
-
-	   		<h3><%= link_to classroom.class_name , classroom_path(classroom) %> <%= link_to 'New Planification', new_planification_path , :class => 'btn btn-warning btn-sm' %> <%= link_to 'Create Quiz', new_quiz_path , :class => 'btn btn-info btn-sm' %>
-</h3> <br>
-
+	   			<tr>	
+			   		<td><%= link_to classroom.class_name , teacher_dashboard_path(:ver_curso => classroom) %></td> 
+			   		<td><%= link_to 'New Planification', teacher_dashboard_path(:nuevaplanificacion => classroom) , :class => 'btn btn-warning btn-sm' %> </td> 
+			   		<td><%= link_to 'Create Quiz', new_quiz_path , :class => 'btn btn-info btn-sm' %></td> 
+			   	</tr>
 	   <% end %>
+	   </tbody> 
+   </table>
+   <%= link_to 'Create new classroom' , new_classroom_path, :class => 'btn btn-success'  %>
+</div>
 
-   <%= link_to 'Create new classroom' , new_classroom_path, :class => 'btn btn-success'  %><br>
-
-   
-
-	
-	</div>
-
-	<div class="col-md-9">
-
-		blah!
+	<div class="col-lg-8">
+		<div class="container-fluid">
+	<% if @classroom != nil %>	
+		<%= render 'verclassroom' %>
+	<% elsif @planification != nil %>	
+		<%= render 'nuevaplanificacion' %>
+	<% end %>
+		</div>
 	</div>			
 </div>
 </div>	

@@ -11,12 +11,316 @@
  *= require_self
  *= require_tree .
  */
+@import 'dist/fonts/stylesheet.css';
 
-.image { 
-   position: relative; 
-   width: 100%; /* for IE 6 */
+@import 'dist/icons/css/font-awesome.min.css';
+html {
+  overflow-x: hidden;
 }
-
+.proxima-reg {
+  font-family: 'proxima_nova_rgregular';
+}
+.proxima-bold {
+  font-family: 'proxima_nova_rgbold';
+}
+.proxima-it {
+  font-family: 'proxima_novalight';
+}
+/*colores*/
+.bg-azul {
+  background-color: #445593;
+}
+.bg-naranjo {
+  background-color: #C95709;
+}
+.bg-celeste {
+  background-color: #48B0C1;
+}
+.bg-verde {
+  background-color: #55BFA3;
+}
+.bg-verde-obs {
+  background-color: #3c8996;
+}
+.txt-bold {
+  font-family: 'proxima_nova_rgbold';
+}
+body {
+  font-family: 'proxima_nova_rgregular';
+}
+.top-nav {
+  background-color: #445593;
+  min-height: 80px;
+  padding-top: 10px;
+  border-bottom: 6px solid #3E4F87;
+  padding-bottom: 5px;
+}
+a {
+  -webkit-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+/*botones*/
+.btn-naranjo {
+  background-color: #C95709;
+  color: white;
+}
+.btn-naranjo:hover {
+  background-color: #AD4B09;
+  color: white;
+}
+.btn-verde {
+  background-color: #55BFA3;
+  color: white;
+}
+.btn-verde:hover {
+  background-color: #3C8E77;
+  color: white;
+}
+.btn-verde-obs {
+  background-color: #3c8996;
+  color: white;
+}
+.btn-verde-obs:hover {
+  background-color: #2e5d64;
+  color: white;
+}
+.btn {
+  border-radius: 1px;
+}
+.botones-top {
+  padding-top: 20px;
+}
+.container .row {
+  position: relative;
+}
+.centro {
+  background-color: #55BFA3;
+  color: white;
+}
+.intro-home {
+  padding-top: 60px;
+  position: relative;
+  z-index: 777;
+}
+.intro-home h1 {
+  font-family: 'proxima_nova_rgbold';
+  text-transform: uppercase;
+  font-size: 3em;
+}
+.intro-home p {
+  padding-right: 180px;
+}
+.intro-home-mobil {
+  padding-top: 10px;
+  position: relative;
+  z-index: 777;
+}
+.intro-home-mobil h1 {
+  font-family: 'proxima_nova_rgbold';
+  text-transform: uppercase;
+  font-size: 0.8em;
+}
+.intro-home-mobil p {
+  padding-right: 0px;
+  font-size: 0.6em;
+}
+.intro-home-mobil .col-xs-6 {
+  padding-right: 0px;
+  padding-left: 10px;
+}
+.intro-home-mobil .col-xs-5 {
+  padding-right: 10px;
+  padding-top: 10px;
+  padding-left: 30px;
+}
+.libros {
+  position: absolute;
+  z-index: 666;
+}
+.low {
+  background-color: #48B0C1;
+  border-top: 6px solid #339BA4;
+  color: white;
+  padding-top: 30px;
+  padding-bottom: 80px;
+}
+.low h3 {
+  font-size: 2em;
+  text-align: center;
+  text-transform: uppercase;
+}
+.low h3 span {
+  font-family: 'proxima_nova_rgbold';
+}
+.f {
+  padding-top: 40px;
+  background: #4D4D4D;
+  border-top: 6px solid #333;
+  padding-bottom: 20px;
+  color: white;
+}
+.f .small {
+  padding-top: 13px;
+  padding-left: 3px;
+  font-size: 0.6em;
+}
+.el-testimonio p {
+  font-size: 10px;
+}
+.el-testimonio p span {
+  font-size: 18px;
+}
+.social .nav-pills li a {
+  color: white;
+  font-size: 3.5em;
+}
+.social .nav-pills li a:hover {
+  background-color: transparent;
+  color: #999;
+}
+.botones-log-mob a {
+  margin-bottom: 10px;
+  width: 200px;
+}
+/*media queries*/
+@media screen and (min-width: 320px) {
+  .f {
+    padding-top: 10px;
+  }
+  .botones-top {
+    padding-top: 20px;
+  }
+  .top-nav {
+    background-color: #445593;
+    min-height: 80px;
+    padding-top: 10px;
+  }
+  .low {
+    background-color: #e3e3e3;
+    border-top: 6px solid #999;
+    padding-bottom: 20px;
+  }
+}
+/*fin 320*/
+@media screen and (min-width: 480px) {
+  .botones-top {
+    padding-top: 20px;
+  }
+  .top-nav {
+    background-color: #445593;
+    min-height: 80px;
+    padding-top: 10px;
+  }
+  .low {
+    background-color: #48B0C1;
+    border-top: 6px solid #339BA4;
+    text-align: center;
+    padding-bottom: 80px;
+  }
+  .f {
+    padding-top: 40px;
+  }
+}
+/*fin 480*/
+@media screen and (min-width: 768px) {
+  .f {
+    padding-top: 40px;
+  }
+  .botones-top {
+    padding-top: 20px;
+  }
+  .top-nav {
+    background-color: #445593;
+    min-height: 80px;
+    padding-top: 10px;
+  }
+  .centro {
+    padding-bottom: 90px;
+  }
+  .libros {
+    width: 280px;
+    right: 15px;
+    top: 10px;
+  }
+  .low {
+    background-color: #48B0C1;
+    border-top: 6px solid #339BA4;
+    text-align: left;
+    padding-bottom: 80px;
+  }
+}
+/*fin 768*/
+@media screen and (min-width: 992px) {
+  .f {
+    padding-top: 40px;
+  }
+  .botones-top {
+    padding-top: 33px;
+  }
+  .top-nav {
+    background-color: #445593;
+    min-height: 105px;
+    padding-top: 10px;
+  }
+  .intro-home {
+    padding-top: 20px;
+  }
+  .centro {
+    padding-bottom: 196px;
+  }
+  .libros {
+    width: 280px;
+    right: 37px;
+    top: 10px;
+  }
+  .low {
+    background-color: #48B0C1;
+    border-top: 6px solid #339BA4;
+    text-align: left;
+    padding-bottom: 80px;
+  }
+}
+/*fin 992*/
+@media screen and (min-width: 1200px) {
+  .f {
+    padding-top: 40px;
+  }
+  .botones-top {
+    padding-top: 20px;
+  }
+  .top-nav {
+    background-color: #445593;
+    min-height: 80px;
+    padding-top: 10px;
+  }
+  .centro {
+    padding-bottom: 116px;
+  }
+  .botones-intro {
+    padding-top: 40px;
+  }
+  .intro-home {
+    padding-top: 60px;
+  }
+  .libros {
+    width: 280px;
+    right: 91px;
+    top: 10px;
+  }
+  .el-testimonio {
+    margin-bottom: 30px;
+  }
+  .low {
+    background-color: #48B0C1;
+    border-top: 6px solid #339BA4;
+    text-align: left;
+    padding-bottom: 80px;
+  }
+}
+/*fin 1200*/
+/*FIN MEDIA QUERIES*/
 
 /* styles for pictures in lessons */
 

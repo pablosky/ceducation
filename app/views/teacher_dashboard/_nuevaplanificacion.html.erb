@@ -1,0 +1,57 @@
+<%= form_for(@planification , :html => {:class => "form-horizontal"} ) do  |f| %>
+  <% if @planification.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@planification.errors.count, "error") %> prohibited this planification from being saved:</h2>
+
+      <ul>
+      <% @planification.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= f.label :user_id , :class =>"control-label"%>
+    <%= f.text_field :user_id , :class =>"form-control" %>
+  </div>
+ <div class="form-group">
+    <%= f.label :program_id %><br>
+    <%= f.text_field :program_id , :class =>"form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :subject %><br>
+    <%= f.text_field :subject, :class =>"form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :teach_time %><br>
+    <%= f.text_field :teach_time , :class =>"form-control"%>
+  </div>
+  <div class="form-group">
+    <%= f.label :classroom_id %><br>
+    <%= f.text_field :classroom_id , :class =>"form-control"%>
+  </div>
+   <div class="form-group">
+    <%= f.label :obj_fund_vert %><br>
+    <%= f.text_area :obj_fund_vert , :class =>"form-control"%>
+  </div>
+  <div class="form-group">
+    <%= f.label :obj_fund_transv %><br>
+    <%= f.text_area :obj_fund_transv , :class =>"form-control"%>
+  </div>
+  <div class="form-group">
+    <%= f.label :contents %><br>
+    <%= f.text_area :contents , :class =>"form-control"%>
+  </div>
+  <div class="form-group">
+    <%= f.label :expect_learn %><br>
+    <%= f.text_area :expect_learn , :class =>"form-control"%>
+  </div>
+  <div class="form-group">
+    <%= f.label :activ %><br>
+    <%= f.text_area :activ , :class =>"form-control"%>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
