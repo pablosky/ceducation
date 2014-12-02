@@ -65,7 +65,7 @@
 
           var hola = document.getElementById("final_span").innerHTML;
           var chao = '<%= @lesson.content.capitalize %>';
-          chao = chao.replace(/\?,\!/g,'')
+          chao = chao.replace(/\?/g,'')
           if(hola === chao) {
               alert("bien!");
                alert(chao); 

@@ -1,0 +1,17 @@
+
+<div class="container">
+<h1> quiz time! </h1>
+
+<% if @lesson.category == "Pronunciation" %>
+
+	<%= render 'pronunciation'%>
+<% elsif @lesson.category == "Vocabulary" %>
+
+	<%= render 'vocabulary'%>
+<% elsif @lesson.category == "Grammar" %>
+
+	<%= render 'grammar'%>
+<% end %>
+
+
+</div>	

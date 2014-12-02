@@ -117,7 +117,46 @@ class GameController < ApplicationController
 
 
  end
+def quiz_check
 
+
+
+end
+
+def quiz
+
+	@lesson = Lesson.find(params[:lesson])
+
+	if params[:quiz] != nil
+
+			if params[:answer] != nil 
+
+				if @lesson.category == "Pronunciation"
+					if @lesson.answer == params[:answer]
+						flash[:notice] = "correct!"
+					else
+						flash[:notice] = "wrong =("
+					end
+				end
+				
+			end
+
+	
+
+		@quizt = QuizTracking.find(params[:quiz])
+		@lesson =  Lesson.find(@quizt.uncompleted.first)
+
+	end
+
+
+
+
+end
+#inicializador de quizztracking
+def quiz_start 
+
+
+end
 
 
 end

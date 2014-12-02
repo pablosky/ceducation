@@ -57,6 +57,12 @@ RapidVocabulary::Application.routes.draw do
    get 'game/negapos' => 'game#negapos'
 
    get 'game' => 'game#index'
+
+   get 'quiz/:lesson' => 'game#quiz'
+
+   get 'quiz/:quiz/:lesson' => 'game#quiz' #cuando este listo el tracking y el quiz creation
+
+   get 'quiz/:quiz/:lesson/:answer' => 'game#quiz'
    #get 'game/negapos/:id/:ans' => 'game#negapos'
 
   # Example of regular route:
