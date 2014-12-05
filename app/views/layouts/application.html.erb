@@ -44,40 +44,21 @@
       <div class="row">
         <div class="container">
           <div class="col-xs-6 col-xs-offset-3 col-sm-3 col-md-3 col-lg-2 col-md-offset-0 col-sm-offset-0 col-lg-offset-1">
-            <a href=""><img src="http://motive.cl/ceducation/dist/img/logo-top.png" alt="Logo" class="img-responsive"></a>
-          </div>
-        <div class="botones-top hidden-xs">
-           <div class="col-sm-3 col-md-3 col-lg-2 col-sm-offset-4 col-md-offset-4 col-lg-offset-5">
-            <a href="" class="btn btn-verde ">Ingresar con mi cuenta</a>
-          </div>
-
-          <div class="col-sm-2 col-md-2">
-            <a href="" class="btn btn-naranjo">Crear Cuenta</a>
-          </div>
-        </div>
-
-        </div>
-      </div>
-    </div>
-
-    <div class="navbar navbar-reverse navbar-static-top" style="background-color:#265799;">
-      <div class="container">
-        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
-        <% if current_user != nil %>
+            <% if current_user != nil %>
            <% if current_user.role == "student" %>
-            <a class="navbar-brand" href="/student_dashboard">C-Education</a>
+                        <a href="/student_dashboard"><img src="http://motive.cl/ceducation/dist/img/logo-top.png" alt="Logo" class="img-responsive"></a>
+
             <% else %>
 
-            <a class="navbar-brand" href="/teacher_dashboard">C-Education</a>
+                        <a href="/teacher_dashboard"><img src="http://motive.cl/ceducation/dist/img/logo-top.png" alt="Logo" class="img-responsive"></a>
+
             <% end %>
          <% end %>
+          </div>
+        
         <div class="navbar-collapse collapse navbar-responsive-collapse">
           <ul class="nav navbar-nav">
-            <li><%= link_to "About", "/about" %></li>
+            <li><%= link_to "About", "/" %></li>
               <% if !signed_in? %>
               <li><%= link_to "Login", new_user_session_path %></li>
               <li><%= link_to "Sign up", new_user_registration_path %></li>
@@ -86,33 +67,26 @@
                        <li> <%= link_to "Log out", destroy_user_session_path , :method => :delete %></li>
                       <% end %>
           </ul>
+
+           
+    <%= form_tag(search_path, :method => "get", id: "search-form" , class: "navbar-form navbar-right") do %>
+  <div class="form-group"><%= text_field_tag :word, params[:word], placeholder: "Search Word" , class: "form-control"%></div>
+  <%= submit_tag "Search", :name => nil %>
+<% end %>
+  
+        </div>
+
         </div>
       </div>
     </div>
-<center> <p>
-    <%= form_tag(search_path, :method => "get", id: "search-form") do %>
-  <%= text_field_tag :word, params[:word], placeholder: "Search Word" %>
-  <%= submit_tag "Search", :name => nil %>
-<% end %>
-  </p>
+
   
-
-
-
-</center>
-    
-    <div class="container">
-
-  <!-- search input -->
-      <div class="row">
-        
           <%= bootstrap_flash %>
           <%= yield %>
-      </div><!--/row-->
-     <br><br>
-      
+      <!--/row-->
+    
 
-    </div> <!-- /container -->
+    <!-- /container -->
 
   </body>
 </html>

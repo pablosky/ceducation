@@ -5,6 +5,9 @@
 <% if @lesson.category == "Pronunciation" %>
 
 	<%= render 'pronunciation'%>
+<% elsif @lesson.category == "Pronunciation Video" %>
+
+	<%= render 'pronunciation_video'%>	
 <% elsif @lesson.category == "Vocabulary" %>
 
 	<%= render 'vocabulary'%>

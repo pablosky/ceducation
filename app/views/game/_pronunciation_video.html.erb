@@ -1,6 +1,8 @@
 
-<h1> Pronunciation </h1>
-<h4><%= @lesson.content %></h4>
+<h1> Pronunciation Video</h1>
+<h4><%= @lesson.answer %></h4>
+
+<%= raw(@lesson.content) %>
 <div class="compact marquee">
         <div id="info">
           <p id="info_start">
@@ -55,7 +57,7 @@
 
 
 
-<a href='#' class='btn btn-default' id="send_to_rails">Executer</a>
+<a href='#' class='btn btn-default' id="send_to_rails">Check Answer</a>
         
 <script src="/intl/en/chrome/assets/common/js/chrome.min.js"></script> 
 
@@ -64,7 +66,7 @@
         $("#send_to_rails").click(function(){
 
           var hola = document.getElementById("final_span").innerHTML;
-          var chao = '<%= @lesson.content.capitalize %>';
+          var chao = '<%= @lesson.answer.capitalize %>';
           chao = chao.replace(/\?/g,'')
           if(hola === chao) {
               alert("bien!");
