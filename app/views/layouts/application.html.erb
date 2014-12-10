@@ -48,7 +48,7 @@
             <% if @welcome == true &&  current_user == nil%>
 
             <a href="/"><img src="http://motive.cl/ceducation/dist/img/logo-top.png" alt="Logo" class="img-responsive"></a>
-           <%else %>
+           <%elsif current_user!= nil %>
           
 
              <% if current_user.role == "student" %>
@@ -59,9 +59,9 @@
                         <a href="/teacher_dashboard"><img src="http://motive.cl/ceducation/dist/img/logo-top.png" alt="Logo" class="img-responsive"></a>
 
             <% end %>
-            
+          <%else %>
 
-        
+             <a href="/"><img src="http://motive.cl/ceducation/dist/img/logo-top.png" alt="Logo" class="img-responsive"></a>
          <% end %>
           </div>
         
