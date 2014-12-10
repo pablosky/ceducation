@@ -44,8 +44,14 @@
       <div class="row">
         <div class="container">
           <div class="col-xs-6 col-xs-offset-3 col-sm-3 col-md-3 col-lg-2 col-md-offset-0 col-sm-offset-0 col-lg-offset-1">
-            <% if current_user != nil %>
-           <% if current_user.role == "student" %>
+            
+            <% if @welcome == true &&  current_user == nil%>
+
+            <a href="/"><img src="http://motive.cl/ceducation/dist/img/logo-top.png" alt="Logo" class="img-responsive"></a>
+           <%else %>
+          
+
+             <% if current_user.role == "student" %>
                         <a href="/student_dashboard"><img src="http://motive.cl/ceducation/dist/img/logo-top.png" alt="Logo" class="img-responsive"></a>
 
             <% else %>
@@ -53,20 +59,24 @@
                         <a href="/teacher_dashboard"><img src="http://motive.cl/ceducation/dist/img/logo-top.png" alt="Logo" class="img-responsive"></a>
 
             <% end %>
+            
+
+        
          <% end %>
           </div>
         
         <div class="navbar-collapse collapse navbar-responsive-collapse">
           <ul class="nav navbar-nav">
-            <li><%= link_to "About", "/" %></li>
+            <% if @welcome == nil %> 
               <% if !signed_in? %>
               <li><%= link_to "Login", new_user_session_path %></li>
               <li><%= link_to "Sign up", new_user_registration_path %></li>
               <% else %>
                                     <li> <%= link_to current_user.email %></li>
                        <li> <%= link_to "Log out", destroy_user_session_path , :method => :delete %></li>
-                      <% end %>
-          </ul>
+              <% end %>
+              <% end %>
+             </ul>
 
            
     <%= form_tag(search_path, :method => "get", id: "search-form" , class: "navbar-form navbar-right") do %>

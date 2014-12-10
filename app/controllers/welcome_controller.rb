@@ -1,7 +1,7 @@
 class WelcomeController < ApplicationController
 
 def index
-
+	@welcome = true
 	#redirect_to "http://ceducation-landing.herokuapp.com"
 end
 
