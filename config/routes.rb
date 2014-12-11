@@ -1,4 +1,4 @@
-RapidVocabulary::Application.routes.draw do
+Ceducation::Application.routes.draw do
   resources :planifications
 
   resources :programs

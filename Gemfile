@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 
+gem 'rename'
 gem 'twitter'
 #gem 'aws-sdk'
 gem "fog" #in order to use carrierwave with s3

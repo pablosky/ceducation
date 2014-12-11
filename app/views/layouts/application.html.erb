@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><%= content_for?(:title) ? yield(:title) : "RapidVocabulary" %></title>
+    <title><%= content_for?(:title) ? yield(:title) : "Ceducation" %></title>
     <%= csrf_meta_tags %>
     
     <%= stylesheet_link_tag "application", :media => "all" %>
@@ -70,10 +70,12 @@
             <% if @welcome == nil %> 
               <% if !signed_in? %>
               <li><%= link_to "Login", new_user_session_path %></li>
-              <li><%= link_to "Sign up", new_user_registration_path %></li>
+                      <li><%= link_to "Sign up", new_user_registration_path %></li>
+              
               <% else %>
-                                    <li> <%= link_to current_user.email %></li>
-                       <li> <%= link_to "Log out", destroy_user_session_path , :method => :delete %></li>
+                     <li> <%= link_to "Log out", destroy_user_session_path , :method => :delete %></li>
+              <li> <%= link_to current_user.email %></li>               
+                       
               <% end %>
               <% end %>
              </ul>

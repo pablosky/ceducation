@@ -9,4 +9,4 @@
 
 # Make sure your secret_key_base is kept private
 # if you're sharing your code publicly.
-RapidVocabulary::Application.config.secret_key_base = '0962bdd21fcedba17bb831a195c3d45cd8d03142534b8d0a7ee0d0f8a61acc9cb33bec0b121cec188787e8000d6103165565c7a8289aa562453a651d65e7778f'
+Ceducation::Application.config.secret_key_base = '0962bdd21fcedba17bb831a195c3d45cd8d03142534b8d0a7ee0d0f8a61acc9cb33bec0b121cec188787e8000d6103165565c7a8289aa562453a651d65e7778f'

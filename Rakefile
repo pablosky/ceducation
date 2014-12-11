@@ -3,4 +3,4 @@
 
 require File.expand_path('../config/application', __FILE__)
 
-RapidVocabulary::Application.load_tasks
+Ceducation::Application.load_tasks

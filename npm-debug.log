@@ -225,7 +225,7 @@
 57 error Please try running this command again as root/Administrator.
 58 error System Darwin 13.4.0
 59 error command "node" "/usr/local/bin/npm" "install" "-g" "peerflix"
-60 error cwd /Users/pabloperez/Desktop/RapidVocabulary
+60 error cwd /Users/pabloperez/Desktop/Ceducation
 61 error node -v v0.10.32
 62 error npm -v 1.4.28
 63 error path /usr/local/lib/node_modules/peerflix
